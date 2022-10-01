@@ -1,6 +1,31 @@
 import { Item } from "./item";
 
 export const ITEMS: Item[] = [
-	{ name: 'item1' },
-	{ name: 'item2' }
+	{ id: 0, name: `Karil's coif` },
+	{ id: 1, name: `Karil's leathertop` },
+	{ id: 2, name: `Karil's leatherskirt` },
+	{ id: 3, name: `Karil's crossbow` },
+	{ id: 4, name: `Ahrim's hood` },
+	{ id: 5, name: `Ahrim's robetop` },
+	{ id: 6, name: `Ahrim's robeskirt` },
+	{ id: 7, name: `Ahrim's staff` },
+	{ id: 8, name: `Dharok's helm` },
+	{ id: 9, name: `Dharok's platebody` },
+	{ id: 10, name: `Dharok's platelegs` },
+	{ id: 11, name: `Dharok's greataxe` },
+	{ id: 12, name: `Guthan's helm` },
+	{ id: 13, name: `Guthan's platebody` },
+	{ id: 14, name: `Guthan's chainskirt` },
+	{ id: 15, name: `Guthan's warspear` },
+	{ id: 16, name: `Torag's helm` },
+	{ id: 17, name: `Torag's platebody` },
+	{ id: 18, name: `Torag's platelegs` },
+	{ id: 19, name: `Torag's hammers` },
+	{ id: 20, name: `Verac's helm` },
+	{ id: 21, name: `Verac's brassard` },
+	{ id: 22, name: `Verac's plateskirt` },
+	{ id: 23, name: `Verac's flail` },
+	{ id: 24, name: 'Hammer' },
+	{ id: 25, name: 'Dragon chainbody' },
+	{ id: 26, name: 'Rune chainbody' }
 ];

@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+	background-color: rgb(192,168,134);
+	user-select: none;
+}
+
+td {
+	text-align: center;
+	vertical-align: middle;
+	height: 35px;
+	width: 35px;
+}
+
+img {
+	-webkit-user-drag: none;
+}

@@ -1,0 +1,10 @@
+<h1>COLLECTION NAME</h1>
+<table>
+	<tr *ngFor="let row of [].constructor(numRows); let r = index">
+		<td *ngFor="let item of getRowArray(r); let c = index">
+			<div (mousedown)="test(c, r)">
+				<app-coll-item [item]="item"></app-coll-item>
+			</div>
+		</td>
+	</tr>
+</table>
