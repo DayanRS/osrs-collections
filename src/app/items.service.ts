@@ -30,4 +30,9 @@ export class ItemsService {
 		
 		return of(items);
 	}
+	
+	getCollName(collId: number): Observable<string> {
+		const coll = COLLECTIONS.find(c => c.id === collId)!;
+		return of(coll.name);
+	}
 }

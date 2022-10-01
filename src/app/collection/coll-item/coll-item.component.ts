@@ -15,6 +15,7 @@ export class CollItemComponent implements OnInit {
 	constructor() { }
 	
 	ngOnInit(): void {
+		console.log(this.item);
 		this.item.nameFull = this.item.name.replaceAll(" ","_");
 	}
 	

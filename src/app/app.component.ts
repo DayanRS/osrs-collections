@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { COLLECTIONS } from './collections';
 
 @Component({
 	selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	title = 'osrs-collections';
+	collections = COLLECTIONS;
 }
