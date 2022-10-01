@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+			"baseHref": "https://dayanrs.github.io/osrs-collections/",
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
