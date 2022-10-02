@@ -9,7 +9,10 @@ import { Item } from '../../item';
 export class CollItemComponent implements OnInit {
 	@Input() item!: Item;
 	
-	opacity: number = 50;
+	private DESELECTED_OPACITY = 25;
+	private SELECTED_OPACITY = 100;
+	
+	opacity: number = this.DESELECTED_OPACITY;
 	isSelected: boolean = false;
 	
 	constructor() { }
@@ -17,15 +20,36 @@ export class CollItemComponent implements OnInit {
 	ngOnInit(): void {
 		console.log(this.item);
 		this.item.nameFull = this.item.name.replaceAll(" ","_");
+		
+		if(document.cookie === "") {
+			document.cookie = "items=,"
+		} else {
+			if(document.cookie.indexOf(","+this.item.id+",") >= 0) {	//selected in cookie
+				this.selectItem();
+			}
+		}
 	}
 	
 	toggleItem(): void {
 		if(this.isSelected) {
-			this.opacity = 50;
+			this.deselectItem();
 		} else {
-			this.opacity = 100;
+			this.selectItem();
 		}
+	}
+	
+	private selectItem(): void {
+		this.isSelected = true;
+		this.opacity = this.SELECTED_OPACITY;
 		
-		this.isSelected = !this.isSelected;
+		if(document.cookie.indexOf(","+this.item.id+",") === -1) {	//only add to cookie if not already in it
+			document.cookie = document.cookie + this.item.id + ",";
+		}
+	}
+	
+	private deselectItem(): void {
+		this.isSelected = false;
+		this.opacity = this.DESELECTED_OPACITY;
+		document.cookie = document.cookie.replace(`,${this.item.id},`, ",");
 	}
 }

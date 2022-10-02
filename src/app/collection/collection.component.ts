@@ -27,21 +27,14 @@ export class CollectionComponent implements OnInit {
 		this.numRows = Math.ceil(this.items.length/this.rowLength);
 	}
 	
-	ngAfterViewInit(): void {
-		let arr = this.itemChildren.toArray();
-		
-		for(let i = 0; i < arr.length; i++) {
-			console.log(arr[i].item.name);
-		}
-	}
-	
-	test(col: number, row: number): void {
+	clickItem(col: number, row: number): void {
 		this.itemChildren.toArray()[col+row*this.rowLength].toggleItem();
 	}
 	
 	getRowArray(rowIndex: number): Item[] {
 		let grid: Item[][] = [];
 		
+		/*
 		for(let i = 0; i < this.numRows; i++) {
 			if(i === this.numRows-1) {
 				grid[i] = new Array(this.items.length % this.rowLength);
@@ -53,13 +46,17 @@ export class CollectionComponent implements OnInit {
 		
 		for(let j = 0; j < this.rowLength; j++) {	//transposed array
 			for(let i = 0; i < this.numRows; i++) {
+				console.log(i + ", " + j + ", " + (i+(j*this.numRows)));
 				let item = this.items[i+(j*this.numRows)];
 				if(item === undefined) break;
 				grid[i][j] = item;
 			}
 		}
 		
-		console.log(grid[rowIndex]);
+		console.log(grid);
 		return grid[rowIndex];
+		*/
+		
+		return this.items.slice(rowIndex*this.rowLength, rowIndex*this.rowLength+this.rowLength);
 	}
 }

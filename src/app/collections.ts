@@ -9,7 +9,7 @@ export const COLLECTIONS: Collection[] = [
 	},
 	{
 		id: 1,
-		name: "Tools",
-		item_ids: [24]
+		name: "Miscellaneous",
+		item_ids: [24, 25, 26, 27, 28, 29, 30]
 	}
 ];
